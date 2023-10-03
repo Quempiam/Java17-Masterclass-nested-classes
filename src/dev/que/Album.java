@@ -9,22 +9,22 @@ public class Album {
     private SongList songs;
 
     public static class SongList {
-        private ArrayList<Song> songsArray;
+        private ArrayList<Song> songs;
 
-        public SongList() {
-            this.songsArray = new ArrayList<>();
+        private SongList() {
+            this.songs = new ArrayList<>();
         }
 
-        public boolean add(Song song) {
-            if (songsArray.contains(song)) {
+        private boolean add(Song song) {
+            if (songs.contains(song)) {
                 return false;
             }
-            return songsArray.add(song);
+            return songs.add(song);
         }
 
-        public Song findSong(String title) {
+        private Song findSong(String title) {
             if (title != null) {
-                for (Song elem : songsArray) {
+                for (Song elem : songs) {
                     if (elem.getTitle().equals(title)) {
                         return elem;
                     }
@@ -34,9 +34,9 @@ public class Album {
             return null;
         }
 
-        public Song findSong(int trackNumber) {
-            if (trackNumber > 0 && trackNumber <= songsArray.size()) {
-                return songsArray.get(trackNumber - 1);
+        private Song findSong(int trackNumber) {
+            if (trackNumber > 0 && trackNumber <= songs.size()) {
+                return songs.get(trackNumber - 1);
             }
             System.out.println("This album does not have a track "+ trackNumber +".");
             return null;
