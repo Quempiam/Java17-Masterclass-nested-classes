@@ -18,7 +18,7 @@ The member variable, constructor and all methods may be marked with private acce
 ***IMPORTANT*** - If you are using an IDE to write this code you may have your inner class marked with private access. However, for the purposes of this code evaluation please mark the class itself public static.
 
 Example input:
-
+```java
 Album album = new Album("Stormbringer", "Deep Purple");
 album.addSong("Stormbringer", 4.6);
 album.addSong("Love don't mean a thing", 4.22);
@@ -52,7 +52,10 @@ albums.get(1).addToPlayList(8, playList);
 albums.get(1).addToPlayList(3, playList);
 albums.get(1).addToPlayList(2, playList);
 albums.get(1).addToPlayList(24, playList);  // There is no track 24
-Example output:
+```
 
+Example output:
+```
 The song Speed king is not in this album
 This album does not have a track 24
+```
