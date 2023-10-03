@@ -49,9 +49,6 @@ public class Album {
         this.songs = new SongList();
     }
 
-    private Song findSong(String title) {
-        return this.songs.findSong(title);
-    }
 
     public boolean addSong(String title, double duration) {
         return this.songs.add(new Song(title, duration));
@@ -67,11 +64,11 @@ public class Album {
     }
 
     public boolean addToPlayList(String title, LinkedList<Song> playlist) {
-        Song s = findSong(title);
-        if (s == null) {
-            return false;
+        Song temp = songs.findSong(title);
+        if (temp != null) {
+            playlist.add(temp);
+            return true;
         }
-        playlist.add(s);
-        return true;
+        return false;
     }
 }
